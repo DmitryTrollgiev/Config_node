@@ -1,0 +1,17 @@
+{
+  "name": "configurator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryTrollgiev/Config_node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitryTrollgiev/Config_node/issues"
+  },
+  "homepage": "https://github.com/DmitryTrollgiev/Config_node#readme"
+}
