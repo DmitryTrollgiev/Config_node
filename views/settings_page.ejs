@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnlineConfig</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="top_left_panel">
+        </div>
+    
+
+        <div class="top_panel">
+        <button onclick="document.location='/main'" style="display: flex;">ГЛАВНАЯ</button>
+        <p> Главная / Настройки </p>
+        </div>
+
+
+
+        <!-- ОКНО С ВЫБОРОМ КОМПЛЕКТУЮЩИХ -->
+        <div class="left_panel" style="overflow-y:auto;">
+           <div class="option_element">
+                <div class="button_component" style="display: inline-block; cursor: pointer;" type="button" onclick="show_users_accounts_roles()">
+                    Управление учетными записями
+                </div>
+           </div>
+           <div class="option_element">
+                <div class="button_component" style="display: inline-block; cursor: pointer;" type="button" onclick="show_roles_settings()">
+                    Управление ролями
+                </div>
+           </div>
+        </div>
+        <!-- ОКНО С ВЫБОРОМ КОМПЛЕКТУЮЩИХ -->
+
+
+
+        <!-- ОКНО С ПОИСКОМ -->
+        <div class="right_panel" style="overflow-y:auto; overflow-x:auto;">
+
+           
+
+
+    <div class="table_with_users" style="text-align: center;">
+        <div id="users_accounts_roles" style="width: 95%; display: inline-block; display: none;">
+            <p style="text-align: center;"> Управление учетными записями</p>
+            <table class="iksweb2" style="text-align: left;">
+                <tbody>
+                    <tr>
+                        <td>ФИО</td>
+                        <td>Роль </td>
+                    </tr>
+                    <tr>
+                        <td>Иванов Иван Иванович </td>
+                        <td><select style="height: 4vh;">
+                            <option value="Tablet">Сейл</option>
+                            <option value="Tablet">Владелец продукта</option>
+                            <option value="Laptop">Админ</option>
+                            <option value="Tablet">Разработчик</option>
+                          </select></td>
+                    </tr>
+                    <tr>
+                        <td>Пупкин Василий Петрович</td>
+                        <td><select style="height: 4vh;">
+                            <option value="Laptop">Админ</option>
+                            <option value="Tablet">Сейл</option>
+                            <option value="Tablet">Владелец продукта</option>
+                            <option value="Tablet">Разработчик</option>
+                          </select></td>
+                    </tr>
+                    <tr>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div id="roles_permissions" style="width: 95%; display: inline-block; display: none;">
+            <p style="text-align: center;"> Управление ролями </p>
+            <table class="iksweb2">
+                <tbody>
+                    <tr>
+                        <td>Роль</td>
+                        <td>Цена</td>
+                        <td>Характеристики</td>
+                    </tr>
+                    <tr>
+                        <td>Сейлы</td>
+                        <td> <input type="checkbox" checked style="display: inline-block; transform: scale(1.5);"/></td>
+                        <td> <input type="checkbox" unchecked style="display: inline-block; transform: scale(1.5);"/></td>
+                    </tr>
+                    <tr>
+                        <td>Производство</td>
+                        <td> <input type="checkbox" unchecked style="display: inline-block; transform: scale(1.5);"/></td>
+                        <td> <input type="checkbox" checked style="display: inline-block; transform: scale(1.5);"/></td>
+                    </tr>
+                    <tr>
+                        <td>Владелец продукта</td>
+                        <td> <input type="checkbox" checked style="display: inline-block; transform: scale(1.5);"/></td>
+                        <td> <input type="checkbox" checked style="display: inline-block; transform: scale(1.5);"/></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        
+    </div>
+
+        </div>
+        <!-- ОКНО С ПОИСКОМ -->
+
+        
+        <div class="bottom_right_panel">
+            <div id="bottom_right_panel_accounts_operations" style="margin-right: 5%; width: 95%; display: none;"> 
+                <button class="button_operations"  style="width: 15%;" type="button">Создать учетную запись</button>
+                <button class="button_operations"  style="width: 15%;" type="button" onclick="make_editable()">Редактировать</button>
+                <button class="button_operations"  style="width: 15%;" type="button">Сохранить</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script  src="./script.js"></script>
+</body>
+</html>

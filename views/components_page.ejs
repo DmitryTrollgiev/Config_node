@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnlineConfig</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+    
+
+    <div class="wrapper">
+
+        <div class="top_left_panel">
+            <label style="display: block; margin-top: 3%;" for="model_type">Выберите модель</label>
+            <select style="transform: scale(1.5);" name="models" id="models" onchange="check_device_model()">
+              <option value="Desktop">Десктопный ПК</option>
+              <option value="Monoblock">Моноблок</option>
+              <option value="Laptop">Ноутбук</option>
+              <option value="Tablet">Планшет</option>
+              <option value="Smartphone">Смартфон</option>
+            </select>
+            </div>
+
+        <div class="top_panel">
+        <button onclick="document.location='/main'" style="display: flex;">ГЛАВНАЯ</button>
+        <p> Главная / База данных</p>
+        </div>
+
+
+
+        <!-- ОКНО С ВЫБОРОМ КОМПЛЕКТУЮЩИХ -->
+        <div class="left_panel" style="overflow-y:auto;">
+            <div id="Desktop_components">
+                <div class="button_with_options_case">
+                    <button class="button_component_with_plus" type="button">Корпус</button>
+                    <button id="case_plus_button" class="button_component_plus" type="button" onclick="show_or_hide_case_opts()";> + </button>
+                 </div>
+    
+                <div id="case_hidden_opts" style="margin-left:10%; display: none;">
+                    <div class="button_with_options_mb">
+                        <button class="button_component_with_plus" type="button">Материнка</button>
+                        <button id="mb_plus_button" class="button_component_plus_mb" type="button" onclick="show_or_hide_mb_opts()";> + </button>
+                    </div>
+            
+                    <div id="mb_hidden_opts" class="buttons_hidden_mb">
+                        <button id="cpus_button" class="button_component" type="button" onclick="show_cpus()";>Процессоры</button>
+                        <button class="button_component" type="button">Озу</button>
+                        <button class="button_component" type="button">+ Компонент</button>
+    
+                    </div>
+                </div>
+    
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+            </div>
+
+            <div id="Monoblock_components" style="display: hidden;">
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+            </div>
+
+            <div id="Laptop_components" style="display: hidden;">
+                <button class="button_component" type="button">+ Лаптоповое</button>
+                <button class="button_component" type="button">+ Лаптоповое</button>
+                <button class="button_component" type="button">+ Лаптоповое</button>
+                <button class="button_component" type="button">+ Лаптоповое</button>
+            </div>
+
+            <div id="Tablet_components" style="display: hidden;">
+                <button class="button_component" type="button">+ Планшетное</button>
+                <button class="button_component" type="button">+ Планшетное</button>
+                <button class="button_component" type="button">+ Планшетное</button>
+                <button class="button_component" type="button">+ Планшетное</button>
+            </div>
+
+            <div id="Smartphone_components" style="display: hidden;">
+                <button class="button_component" type="button">+ Смартфоновое</button>
+                <button class="button_component" type="button">+ Смартфоновое</button>
+                <button class="button_component" type="button">+ Смартфоновое</button>
+                <button class="button_component" type="button">+ Смартфоновое</button>
+            </div>
+            
+        </div>
+        <!-- ОКНО С ВЫБОРОМ КОМПЛЕКТУЮЩИХ -->
+
+
+
+        <!-- ОКНО С БАЗОЙ ДАННЫХ -->
+        <div class="right_panel" style="overflow-y:auto;">
+            <div id="right_panel_contents" style="width: 100%; height: 100%;">
+                <!-- ОВЕРЛЕЙ РЕДАКТИРОВАНИЯ КОМПОНЕНТА -->
+                <div id="compoenent_editing_overlay" style="display: none; width: 100%; height: 100%; text-align: center;">
+                <div class="compoenent_editing_menu">
+                    <div class="compoenent_editing_menu_contents">
+                        <div class="compoenent_editing_menu_header">
+                            Intel Core I5
+                        </div>
+                        <div class="compoenent_editing_menu_right_table">
+                            <div class="characteristic_name">
+                                Цена
+                            </div>
+                            <div class="characteristic_name">
+                                Кол-во ядер
+                            </div>
+                            <div class="characteristic_name">
+                                Частота
+                            </div>
+                            <div class="characteristic_name">
+                                Характеристика 1
+                            </div>
+                            <div class="characteristic_name">
+                                Характеристика 2
+                            </div>
+                        </div>
+                        <div class="compoenent_editing_menu_left_table">
+                            <div class="characteristic_field" contenteditable="true">
+                                12.000 RUB
+                            </div>
+                            <div class="characteristic_field" contenteditable="true">
+                                4
+                            </div>
+                            <div class="characteristic_field" contenteditable="true">
+                                1.2—4.2 ГГц
+                            </div>
+                            <div class="characteristic_field" contenteditable="true">
+                                ...
+                            </div>
+                            <div class="characteristic_field" contenteditable="true">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <!-- ОВЕРЛЕЙ РЕДАКТИРОВАНИЯ КОМПОНЕНТА -->
+
+                <!-- БД ПРОЦЕССОРОВ -->
+                <div id="cpus_container" style="display: none; ">
+                <div id="db_header" style="margin-left:5%; margin-top: 2vh; height: 3vh; display: inine-block;">
+                  <div class="child">Процессор</div>
+                  <div class="child">Цена</div>
+                  <div class="child">Кол-во ядер</div>
+                  <div class="child">Частота</div>
+                  <div class="child">...</div>
+                  <div class="child">...</div>
+                  <div class="child">...</div>
+                </div>
+
+                <div id="CPU_element_0" class="CPU_element" style="display: block; margin-top: 1vh;" type="button" onclick="show_edit_window()" >
+                    <div class="CPU_name" style="display: inline-block; text-align: center; margin-left: 2%; width:10%; background-color: aqua;">
+                        Intel core i7
+                    </div>
+                    <div class="CPU_price" style="display: inline-block; text-align: center; margin-left: 3%; width:10%;  background-color: aqua;">
+                        27.000 RUB
+                    </div>
+                    <div class="CPU_cores-bnumber" style="display: inline-block; text-align: center; margin-left: 3%; width:10%;  background-color: aqua;" >
+                        8
+                    </div>
+                    <div class="CPU_frequency" style="display: inline-block; width:10vw; text-align: center; margin-left: 3%; width:10%;  background-color: aqua;">
+                        3.6—5 ГГц
+                    </div>
+                </div>
+                <div id="CPU_element_1" class="CPU_element" style="display: block; margin-top: 1vh;" type="button" onclick="show_edit_window()" >
+                    <div class="CPU_name" style="display: inline-block; text-align: center; margin-left: 2%; width:10%; background-color: aqua;">
+                        Intel core i7
+                    </div>
+                    <div class="CPU_price" style="display: inline-block; text-align: center; margin-left: 3%; width:10%;  background-color: aqua;">
+                        27.000 RUB
+                    </div>
+                    <div class="CPU_cores-bnumber" style="display: inline-block; text-align: center; margin-left: 3%; width:10%;  background-color: aqua;" >
+                        8
+                    </div>
+                    <div class="CPU_frequency" style="display: inline-block; width:10vw; text-align: center; margin-left: 3%; width:10%;  background-color: aqua;">
+                        3.6—5 ГГц
+                    </div>
+                </div>
+                <div id="CPU_element_2" class="CPU_element" style="display: block; margin-top: 1vh;" type="button" onclick="show_edit_window()" >
+                    <div class="CPU_name" style="display: inline-block; text-align: center; margin-left: 2%; width:10%; background-color: aqua;">
+                        Intel core i7
+                    </div>
+                    <div class="CPU_price" style="display: inline-block; text-align: center; margin-left: 3%; width:10%;  background-color: aqua;">
+                        27.000 RUB
+                    </div>
+                    <div class="CPU_cores-bnumber" style="display: inline-block; text-align: center; margin-left: 3%; width:10%;  background-color: aqua;" >
+                        8
+                    </div>
+                    <div class="CPU_frequency" style="display: inline-block; width:10vw; text-align: center; margin-left: 3%; width:10%;  background-color: aqua;">
+                        3.6—5 ГГц
+                    </div>
+                </div>
+                </div>
+                <!-- БД ПРОЦЕССОРОВ -->
+            </div>
+         
+
+           
+        </div>
+        
+        <!-- ОКНО С БАЗОЙ ДАННЫХ -->
+
+
+
+        <div class="bottom_right_panel">
+            <div id="bottom_right_panel_contents" style="display: inline-block; height: 100%; width: 50%; margin-top: 0%; margin-left: 50%; text-align: center;">
+
+                <div id="compoenent_editing_menu_bottom_panel" class="compoenent_editing_menu_bottom_panel" style="display: none;" >
+                    <button class="button_operations" type="button" onclick="hide_edit_window()" style="width: 20%; ">Сохранить</button>
+                    <button class="button_operations" type="button" onclick="hide_edit_window()" style="width: 20%;">Отменить</button>
+                    <button class="button_operations" type="button" style="width: 20%;">Добавить</button>
+                    <button class="button_operations" type="button" style="width: 20%;">Удалить</button>
+                </div>
+                <button class="button_operations" type="button" style="display: inline-block; width: 92%;">+ Завести новый компонент</button>
+                <button id="add_new_component_button" class="button_operations" type="button" style="display: none; width: 92%;">+ Дублировать компонент из выбранного</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script  src="./script.js"></script>
+</body>
+</html>
