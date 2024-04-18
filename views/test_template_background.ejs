@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnlineConfig</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="top_left_panel">
+           Пользователь
+           <div style="display: block; margin-top: 5%; box-sizing: border-box; border: 2px solid rgba(1, 1, 1, 1); background-color: white; color: black;">
+            Владелец продукта
+           </div>
+        </div>
+    
+
+    <div class="top_panel">
+        <button onclick="show_buttons()" style="display: flex;">Сгенерировать кнопки</button>
+        <button onclick="del_buttons()" style="display: flex;">Удалить кнопки</button>
+        <p>Главная</p>
+    </div>
+
+    
+        <div class="left_panel" id="left_panel">
+        </div>
+
+
+        <div class="right_panel" >
+        </div>
+
+
+        <div class="bottom_right_panel" >
+        </div>
+
+</div>
+
+
+
+    <script>
+
+
+        let show_buttons = function(){
+            document.getElementById("left_panel").innerHTML = `<div id="Desktop_components">
+                <div class="button_with_options_case">
+                    <button class="button_component_with_plus" type="button">Корпус</button>
+                    <button id="case_plus_button" class="button_component_plus" type="button" onclick="show_or_hide_case_opts()";> + </button>
+                 </div>
+    
+                <div id="case_hidden_opts" style="margin-left:10%; display: none;">
+                    <div class="button_with_options_mb">
+                        <button class="button_component_with_plus" type="button">Материнка</button>
+                        <button id="mb_plus_button" class="button_component_plus_mb" type="button" onclick="show_or_hide_mb_opts()";> + </button>
+                    </div>
+            
+                    <div id="mb_hidden_opts" class="buttons_hidden_mb">
+                        <button id="cpus_button" class="button_component" type="button" onclick="show_cpus()";>Процессоры</button>
+                        <button class="button_component" type="button">Озу</button>
+                        <button class="button_component" type="button">+ Компонент</button>
+    
+                    </div>
+                </div>
+    
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+                <button class="button_component" type="button">+ Компонент</button>
+            </div>`;
+        }    
+        
+        let del_buttons = function(){
+            document.getElementById("left_panel").innerHTML = ``;
+        }  
+        
+    </script>
+</body>
+</html>

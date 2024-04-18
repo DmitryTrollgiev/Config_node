@@ -1,15 +1,22 @@
 const express = require('express')
 const app = express()
 const PORT = 3000
+const fs = require('fs');
 
 app.set('view engine', 'ejs')
 app.use(express.static('static'))
 
 
 app.get('/', (req, res) => {
-    res.render('login_page')
+    res.render('test_template_background');
 })
 
+
+
+
+
+
+/*
 app.get('/main', (req, res) => {
     res.render('main_page')
 })
@@ -29,7 +36,7 @@ app.get('/settings', (req, res) => {
     res.render('settings_page')
 })
 
-
+*/
 
 
 app.listen(PORT, () =>{
